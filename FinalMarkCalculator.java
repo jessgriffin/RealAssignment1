@@ -28,44 +28,42 @@ public class FinalMarkCalculator {
 	    BufferedReader br = new BufferedReader(r);
 	    System.out.println("Welcome to Jess. G's mark calculator.");
 	    
-	    //accepts lab activities mark input, and converts it into a percent value
+	    //accepts lab activities mark input (
 	    System.out.print("Please enter your Lab Activities mark out of 10:");
 	    labActivitiesMark = Double.parseDouble(br.readLine());
-	    labActivitiesMark = (labActivitiesMark / 10 )* 100;
 	    
-	    //accepts assignment mark input, and converts it into a percent value
+	    //accepts assignment mark input
 	    System.out.print("Please enter your Assignments mark out of 20:");
 	    assignmentsMark = Double.parseDouble(br.readLine());
-	    assignmentsMark = (assignmentsMark / 20)* 100; 
 	 
-	    //accepts hybrid assignment mark input, converts to percent
+	    //accepts hybrid assignment mark input
 	    System.out.print("Please enter your Hybrid Assignment mark out of 5:");
 	    hybridAssignmentsMark = Double.parseDouble(br.readLine());
-	    hybridAssignmentsMark = (hybridAssignmentsMark / 5) * 100;
 	      
-	    //accepts quiz/test mark input, converts to percent
+	    //accepts quiz/test mark input
 	    System.out.print("Please enter your Quiz(zes) / Test(s) mark out of 25:"); 
 	    quizMark = Double.parseDouble(br.readLine());
-	    quizMark = (quizMark / 25) * 100; 
 	    
-	    //accepts practical assessment mark and converts to percent
+	    //accepts practical assessment mark
 	    System.out.print("Please enter your Practical Assessment mark out of 10:");
 	    practicalAssessmentMark = Double.parseDouble(br.readLine());
-	    practicalAssessmentMark = (practicalAssessmentMark / 10) * 100;
 	    
-	    //accepts final exam mark and converts it into a percent
+	    //accepts final exam mark 
 	    System.out.print("Please enter your final exam mark out of 30:");
 	    finalExamMark = Double.parseDouble((br.readLine()));
-	    finalExamMark = (finalExamMark / 30) * 100; 
 	    
-	    //calculating practical mark
-	    practicalGrade = (practicalAssessmentMark + assignmentsMark + labActivitiesMark) / 3; 
-	    System.out.print("Your practical grade is:" + practicalGrade);
+	    //calculating practical mark. Add the number of points for each section together, find the percents by dividing number of points by number of points possible and multiply by 100 (repeat for each mark calculation section)
+	    practicalGrade = practicalAssessmentMark + assignmentsMark + labActivitiesMark;
+	    practicalGrade = (practicalGrade / 40) * 100;
+	    
+	    System.out.print("Your practical grade is:" + practicalGrade + "%");
 	    
 	    
 	    //calculating theory mark
-	    theoryGrade = (finalExamMark + )
+	    theoryGrade = quizMark + finalExamMark;
+	    theoryGrade = (theoryGrade/ 55) * 100;
 	    
+	    System.out.print("Your theory grade is:" + theoryGrade + "%");
 	    //calculating final mark
 	    
 	}
