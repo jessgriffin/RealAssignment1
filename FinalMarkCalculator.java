@@ -56,15 +56,20 @@ public class FinalMarkCalculator {
 	    practicalGrade = practicalAssessmentMark + assignmentsMark + labActivitiesMark;
 	    practicalGrade = (practicalGrade / 40) * 100;
 	    
-	    System.out.print("Your practical grade is:" + practicalGrade + "%");
+	    System.out.println("Your practical grade is:" + practicalGrade + "%");
 	    
 	    
-	    //calculating theory mark
-	    theoryGrade = quizMark + finalExamMark;
-	    theoryGrade = (theoryGrade/ 55) * 100;
+	    //calculating theory mark THIS IS WRONG STILL
+	    theoryGrade = quizMark + finalExamMark + hybridAssignmentsMark;
+	    theoryGrade = (theoryGrade/ 60) * 100;
+	    //THEORY GRADE IS STILL WRONG YOU NEED TO FIX THIS I THINK YOURE CALCULATING IT WRONG
+	    System.out.println("Your theory grade is:" + theoryGrade + "%");
 	    
-	    System.out.print("Your theory grade is:" + theoryGrade + "%");
 	    //calculating final mark
+	    //Since everything is already out of 100, it's already kind of in a percent so we just need to add the total number of points together
+	    calculatedFinalGrade = labActivitiesMark + assignmentsMark + hybridAssignmentsMark + quizMark + practicalAssessmentMark + finalExamMark;
+	    System.out.println("Your calculated final grade is: " + calculatedFinalGrade + "%");
+	    
 	    
 	}
 }
