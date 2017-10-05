@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//YOU NEED TO NOT MAKE EVERYTHING PERCENTS. THEORY MARKS ALL OUT OF 65 , PRACTICAL ALL OUT OF 30. CALCULATE FINAL PERCENT AFTER
+
 
 
 public class FinalMarkCalculator {
@@ -28,7 +28,7 @@ public class FinalMarkCalculator {
 	    BufferedReader br = new BufferedReader(r);
 	    System.out.println("Welcome to Jess. G's mark calculator.");
 	    
-	    //accepts lab activities mark input (
+	    //accepts lab activities mark input 
 	    System.out.print("Please enter your Lab Activities mark out of 10:");
 	    labActivitiesMark = Double.parseDouble(br.readLine());
 	    
@@ -53,16 +53,18 @@ public class FinalMarkCalculator {
 	    finalExamMark = Double.parseDouble((br.readLine()));
 	    
 	    //calculating practical mark. Add the number of points for each section together, find the percents by dividing number of points by number of points possible and multiply by 100 (repeat for each mark calculation section)
-	    practicalGrade = practicalAssessmentMark + assignmentsMark + labActivitiesMark;
-	    practicalGrade = (practicalGrade / 40) * 100;
+	    practicalGrade = assignmentsMark + labActivitiesMark;
+	    practicalGrade = (practicalGrade / 30) * 100;
 	    
 	    System.out.println("Your practical grade is:" + practicalGrade + "%");
 	    
 	    
-	    //calculating theory mark THIS IS WRONG STILL
-	    theoryGrade = quizMark + finalExamMark + hybridAssignmentsMark;
-	    theoryGrade = (theoryGrade/ 60) * 100;
-	    //THEORY GRADE IS STILL WRONG YOU NEED TO FIX THIS I THINK YOURE CALCULATING IT WRONG
+	    //calculating theory mark, and rounding to two decimal places
+	    theoryGrade = quizMark + finalExamMark + practicalAssessmentMark;
+	    theoryGrade = (theoryGrade/ 65) * 100;
+	    theoryGrade = Math.round(theoryGrade * 100);
+	    theoryGrade = theoryGrade / 100;
+	    
 	    System.out.println("Your theory grade is:" + theoryGrade + "%");
 	    
 	    //calculating final mark
